@@ -65,6 +65,13 @@ function love.draw()
      --love.graphics.print("Bomb is here: " .. bomb, 0, 0)
 end
 
+-- to support desktop
+function love.mousepressed(x, y, button, istouch)
+  if button == 1 then
+    love.touchpressed(0, x, y)
+  end
+end
+
 function love.touchpressed(id, x, y)
   local touchX, touchY = x, y
   
